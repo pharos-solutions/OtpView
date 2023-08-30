@@ -167,20 +167,20 @@ class OtpTextView : FrameLayout {
      * modified by pth
      */
     private fun setFocus(length: Int) {
-        itemViews?.let { itemViews ->
-            for (i in itemViews.indices) {
-                if (i == length) {
-                    if (otpChildEditText?.isFocused == true)
-                        itemViews[i].setViewState(ItemView.ACTIVE)
-                    else itemViews[i].setViewState(ItemView.INACTIVE)
-                } else {
-                    itemViews[i].setViewState(ItemView.INACTIVE)
-                }
-            }
-            if (length == itemViews.size) {
-                itemViews[itemViews.size - 1].setViewState(ItemView.ACTIVE)
-            }
-        }
+//        itemViews?.let { itemViews ->
+//            for (i in itemViews.indices) {
+//                if (i == length) {
+//                    if (otpChildEditText?.isFocused == true)
+//                        itemViews[i].setViewState(ItemView.ACTIVE)
+//                    else itemViews[i].setViewState(ItemView.INACTIVE)
+//                } else {
+//                    itemViews[i].setViewState(ItemView.INACTIVE)
+//                }
+//            }
+//            if (length == itemViews.size) {
+//                itemViews[itemViews.size - 1].setViewState(ItemView.ACTIVE)
+//            }
+//        }
     }
 
     fun setOTP(s: CharSequence) {
@@ -188,8 +188,10 @@ class OtpTextView : FrameLayout {
             for (i in itemViews.indices) {
                 if (i < s.length) {
                     itemViews[i].setText(s[i].toString())
+                    itemViews[i].setViewState(ItemView.INACTIVE)
                 } else {
                     itemViews[i].setText("")
+                    itemViews[i].setViewState(ItemView.ACTIVE)
                 }
             }
         }
