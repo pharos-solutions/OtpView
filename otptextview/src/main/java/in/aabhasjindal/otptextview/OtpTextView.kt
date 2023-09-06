@@ -191,7 +191,7 @@ class OtpTextView : FrameLayout {
                     itemViews[i].setViewState(ItemView.INACTIVE)
                 } else {
                     itemViews[i].setText("")
-                    itemViews[i].setViewState(ItemView.ACTIVE)
+                    itemViews[i].setViewState(ItemView.INACTIVE)
                 }
             }
         }
