@@ -32,6 +32,7 @@ internal class OTPChildEditText : androidx.appcompat.widget.AppCompatEditText {
         inputType = InputType.TYPE_CLASS_NUMBER
         setSelectAllOnFocus(false)
         setTextIsSelectable(false)
+        imeOptions = EditorInfo.IME_FLAG_NO_EXTRACT_UI
     }
 
     public override fun onSelectionChanged(start: Int, end: Int) {
