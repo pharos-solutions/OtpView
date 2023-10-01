@@ -3,6 +3,8 @@ package `in`.aabhasjindal.otptextview
 import android.content.Context
 import android.text.InputType
 import android.util.AttributeSet
+import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputConnection
 
 internal class OTPChildEditText : androidx.appcompat.widget.AppCompatEditText {
 
@@ -16,6 +18,11 @@ internal class OTPChildEditText : androidx.appcompat.widget.AppCompatEditText {
 
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
         init(context)
+    }
+
+    override fun onCreateInputConnection(outAttrs: EditorInfo?): InputConnection {
+        outAttrs?.imeOptions = EditorInfo.IME_FLAG_NO_EXTRACT_UI
+        return super.onCreateInputConnection(outAttrs)
     }
 
     private fun init(context: Context) {
